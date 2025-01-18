@@ -39,10 +39,7 @@ class OtpVerificationViewModel extends BaseViewModel {
     }
   }
 
-  void verifyOtp(String otp) {
-
-
-  }
+  void verifyOtp(String otp) {}
 
   @override
   void dispose() {

@@ -5,7 +5,6 @@ import 'package:stacked/stacked.dart';
 
 import 'otp_view_model.dart';
 
-
 class OtpVerificationView extends StatelessWidget {
   final String email;
 
@@ -19,7 +18,8 @@ class OtpVerificationView extends StatelessWidget {
         return Scaffold(
           backgroundColor: const Color(0xFFF2F1EE),
           body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
+            padding:
+                const EdgeInsets.symmetric(horizontal: 20.0, vertical: 50.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -37,7 +37,6 @@ class OtpVerificationView extends StatelessWidget {
                 ),
                 const SizedBox(height: 20),
 
-                // Instruction Text
                 Text(
                   "Enter the 6-digit OTP sent to your email: ${viewModel.email}",
                   textAlign: TextAlign.center,
@@ -50,7 +49,6 @@ class OtpVerificationView extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
 
-                // OTP Input Field
                 OtpTextField(
                   numberOfFields: 6,
                   borderColor: const Color(0xFF034A45),
@@ -60,7 +58,6 @@ class OtpVerificationView extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
 
-                // Timer and Resend Button
                 Text(
                   "Resend OTP in ${viewModel.remainingTime} seconds",
                   style: GoogleFonts.poppins(
@@ -75,7 +72,8 @@ class OtpVerificationView extends StatelessWidget {
                 Container(
                   width: 200,
                   child: ElevatedButton(
-                    onPressed: viewModel.isResendEnabled ? viewModel.resendOtp : null,
+                    onPressed:
+                        viewModel.isResendEnabled ? viewModel.resendOtp : null,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: viewModel.isResendEnabled
                           ? const Color(0xFF034A45)

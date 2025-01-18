@@ -18,7 +18,7 @@ class SignUpView extends StatelessWidget {
           body: SingleChildScrollView(
             child: Padding(
               padding:
-              const EdgeInsets.symmetric(horizontal: 30.0, vertical: 50.0),
+                  const EdgeInsets.symmetric(horizontal: 30.0, vertical: 50.0),
               child: Form(
                 key: viewModel.formKey,
                 child: Column(
@@ -44,7 +44,6 @@ class SignUpView extends StatelessWidget {
                         )),
                     const SizedBox(height: 30),
 
-                    // Name TextField
                     TextFormField(
                       controller: viewModel.nameController,
                       decoration: InputDecoration(
@@ -56,7 +55,7 @@ class SignUpView extends StatelessWidget {
                         prefixIcon: const Icon(Icons.person),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.0),
-                          borderSide: BorderSide(color: Color(0xFF034A45)), // Set border color on focus
+                          borderSide: BorderSide(color: Color(0xFF034A45)),
                         ),
                       ),
                       validator: (value) {
@@ -80,7 +79,7 @@ class SignUpView extends StatelessWidget {
                         prefixIcon: const Icon(Icons.email),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.0),
-                          borderSide: BorderSide(color: Color(0xFF034A45)), // Set border color on focus
+                          borderSide: BorderSide(color: Color(0xFF034A45)),
                         ),
                       ),
                       validator: (value) {
@@ -95,14 +94,14 @@ class SignUpView extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
 
-                    // Phone Number with Country Code Picker
                     Row(
                       children: [
                         CountryCodePicker(
                           onChanged: (countryCode) {
-                            viewModel.selectedCountryCode = countryCode.dialCode!;
+                            viewModel.selectedCountryCode =
+                                countryCode.dialCode!;
                           },
-                          initialSelection: '+91', // Set default country code
+                          initialSelection: '+91',
                           showCountryOnly: false,
                           showOnlyCountryWhenClosed: false,
                           alignLeft: false,
@@ -120,7 +119,8 @@ class SignUpView extends StatelessWidget {
                               ),
                               focusedBorder: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(8.0),
-                                borderSide: BorderSide(color: Color(0xFF034A45)), // Set border color on focus
+                                borderSide:
+                                    BorderSide(color: Color(0xFF034A45)),
                               ),
                             ),
                             validator: (value) {
@@ -135,7 +135,6 @@ class SignUpView extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
 
-                    // Password TextField
                     TextFormField(
                       controller: viewModel.passwordController,
                       obscureText: viewModel.isPasswordHidden,
@@ -156,7 +155,7 @@ class SignUpView extends StatelessWidget {
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.0),
-                          borderSide: BorderSide(color: Color(0xFF034A45)), // Set border color on focus
+                          borderSide: BorderSide(color: Color(0xFF034A45)),
                         ),
                       ),
                       validator: (value) {
@@ -171,7 +170,6 @@ class SignUpView extends StatelessWidget {
                     ),
                     const SizedBox(height: 15),
 
-                    // Confirm Password TextField
                     TextFormField(
                       controller: viewModel.confirmPasswordController,
                       obscureText: viewModel.isConfirmPasswordHidden,
@@ -192,7 +190,7 @@ class SignUpView extends StatelessWidget {
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.0),
-                          borderSide: BorderSide(color: Color(0xFF034A45)), // Set border color on focus
+                          borderSide: BorderSide(color: Color(0xFF034A45)),
                         ),
                       ),
                       validator: (value) {
@@ -207,7 +205,6 @@ class SignUpView extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
 
-                    // Sign Up Button
                     Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
@@ -215,7 +212,8 @@ class SignUpView extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20)),
                       child: ElevatedButton(
                         onPressed: () {
-                          if (viewModel.formKey.currentState?.validate() ?? false) {
+                          if (viewModel.formKey.currentState?.validate() ??
+                              false) {
                             viewModel.signUp();
                           }
                         },
@@ -299,7 +297,7 @@ class SignUpView extends StatelessWidget {
                             decoration: BoxDecoration(
                               border: Border.all(
                                 width: 0.5,
-                                color: Color(0xFF034A45), // Add a color to the border
+                                color: Color(0xFF034A45),
                               ),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(5.0),
@@ -314,7 +312,7 @@ class SignUpView extends StatelessWidget {
                             decoration: BoxDecoration(
                               border: Border.all(
                                 width: 0.5,
-                                color: Color(0xFF034A45), // Add a color to the border
+                                color: Color(0xFF034A45),
                               ),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(5.0),

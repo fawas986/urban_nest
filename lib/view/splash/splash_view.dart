@@ -11,7 +11,6 @@ class SplashView extends StatelessWidget {
     return ViewModelBuilder<SplashViewmodel>.reactive(
       onViewModelReady: (viewModel) {
         viewModel.initializeApp().then((_) {
-          // Navigate to the next screen
           Navigator.of(context).pushAndRemoveUntil(
             MaterialPageRoute(
               builder: (context) => HomeView(),

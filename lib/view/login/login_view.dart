@@ -12,7 +12,7 @@ class LoginView extends StatelessWidget {
       viewModelBuilder: () => LoginViewmodel(),
       builder: (BuildContext context, LoginViewmodel viewModel, Widget? child) {
         return Scaffold(
-          backgroundColor: const Color(0xFFF2F1EE), // Subtle background color
+          backgroundColor: const Color(0xFFF2F1EE),
           body: SingleChildScrollView(
             child: Padding(
               padding:
@@ -34,7 +34,6 @@ class LoginView extends StatelessWidget {
                     ),
                     const SizedBox(height: 50),
 
-                    // Welcome Text
                     Text(
                       "Welcome Back!",
                       style: GoogleFonts.poppins(
@@ -53,7 +52,6 @@ class LoginView extends StatelessWidget {
                         )),
                     const SizedBox(height: 30),
 
-                    // Email TextField
                     TextFormField(
                       controller: viewModel.emailController,
                       decoration: InputDecoration(
@@ -68,8 +66,10 @@ class LoginView extends StatelessWidget {
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.0),
                           borderSide: const BorderSide(
-                            color: Color(0xFF034A45), // Border color when focused
-                            width: 2.0, // Optional: You can also adjust the border width
+                            color:
+                                Color(0xFF034A45), // Border color when focused
+                            width:
+                                2.0, // Optional: You can also adjust the border width
                           ),
                         ),
                         prefixIcon: const Icon(Icons.email),
@@ -84,8 +84,9 @@ class LoginView extends StatelessWidget {
                         return null;
                       },
                     ),
-                    SizedBox(height: 15,),
-
+                    SizedBox(
+                      height: 15,
+                    ),
 
                     TextFormField(
                       controller: viewModel.passwordController,
@@ -102,8 +103,8 @@ class LoginView extends StatelessWidget {
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(8.0),
                           borderSide: const BorderSide(
-                            color: Color(0xFF034A45), // Border color when focused
-                            width: 2.0, // Optional: Adjust width when focused
+                            color: Color(0xFF034A45),
+                            width: 2.0,
                           ),
                         ),
                         prefixIcon: const Icon(Icons.lock),
@@ -153,9 +154,8 @@ class LoginView extends StatelessWidget {
                     Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
-                        color: Color(0xFF034A45),
-                        borderRadius: BorderRadius.circular(20)
-                      ),
+                          color: Color(0xFF034A45),
+                          borderRadius: BorderRadius.circular(20)),
                       child: ElevatedButton(
                         onPressed: () {
                           if (viewModel.formKey.currentState?.validate() ??
@@ -164,20 +164,18 @@ class LoginView extends StatelessWidget {
                           }
                         },
                         style: ElevatedButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 15),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(8.0),
-                          ),backgroundColor: Color(0xFF034A45)
-                        ),
-                        child:  Text(
+                            padding: const EdgeInsets.symmetric(vertical: 15),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                            backgroundColor: Color(0xFF034A45)),
+                        child: Text(
                           "Login",
                           style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                              fontSize: 18,
-                              color: Colors.white,
-                              fontWeight: FontWeight.w400
-                            )
-                          ),
+                              textStyle: TextStyle(
+                                  fontSize: 18,
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.w400)),
                         ),
                       ),
                     ),
@@ -190,18 +188,17 @@ class LoginView extends StatelessWidget {
                             onPressed: () {
                               viewModel.navigateToSignUp(context);
                             },
-                            child:  Text(
-                              "Sign Up",
-                              style: GoogleFonts.poppins(textStyle:  const TextStyle(
-                                color: Color(0xFF034A45),
-                                fontWeight: FontWeight.w600,
-                              ),)
-                            ),
+                            child: Text("Sign Up",
+                                style: GoogleFonts.poppins(
+                                  textStyle: const TextStyle(
+                                    color: Color(0xFF034A45),
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                                )),
                           ),
                         ],
                       ),
                     ),
-
 
                     const SizedBox(height: 20),
                     Row(
@@ -244,15 +241,15 @@ class LoginView extends StatelessWidget {
                             decoration: BoxDecoration(
                               border: Border.all(
                                 width: 0.5,
-                                color: Color(0xFF034A45), // Add a color to the border
+                                color: Color(0xFF034A45),
                               ),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(5.0),
                               ),
                             ),
                             child: Image.asset("assets/images/google.png"),
-                          )
-                          , const SizedBox(
+                          ),
+                          const SizedBox(
                             width: 50,
                           ),
                           Container(
@@ -261,7 +258,7 @@ class LoginView extends StatelessWidget {
                             decoration: BoxDecoration(
                               border: Border.all(
                                 width: 0.5,
-                                color: Color(0xFF034A45), // Add a color to the border
+                                color: Color(0xFF034A45),
                               ),
                               borderRadius: const BorderRadius.all(
                                 Radius.circular(5.0),

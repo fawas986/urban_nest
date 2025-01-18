@@ -9,9 +9,9 @@ class SignUpViewModel extends BaseViewModel {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
-  final phoneNumberController = TextEditingController(); // Added for phone number
+  final phoneNumberController = TextEditingController();
 
-  String selectedCountryCode = "+1"; // Default to USA country code
+  String selectedCountryCode = "+91";
 
   bool isPasswordHidden = true;
   bool isConfirmPasswordHidden = true;
@@ -27,20 +27,17 @@ class SignUpViewModel extends BaseViewModel {
   }
 
   void signUp() {
-    // Your sign up logic (API call, validation, etc.)
     print("User signed up with email: ${emailController.text}");
     print("Phone number: $selectedCountryCode${phoneNumberController.text}");
-    // You can add more logic for handling sign-up here, such as making an API call
   }
 
   void navigateToLogin(BuildContext context) {
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => LoginView()), // Replace with your LoginView widget
+      MaterialPageRoute(builder: (context) => LoginView()),
     );
   }
 
-  // Function to update selected country code
   void updateCountryCode(String code) {
     selectedCountryCode = code;
     notifyListeners();
